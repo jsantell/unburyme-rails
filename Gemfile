@@ -5,11 +5,12 @@ gem 'haml-rails',   '~> 0.3.4'
 gem 'sqlite3-ruby', '~> 1.3.3'
 gem 'bcrypt-ruby',  '~> 3.0.1'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 gem 'mongoid'
 gem 'bson_ext'
+
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # Gems used only for assets and not required
 # in production environments by default.
