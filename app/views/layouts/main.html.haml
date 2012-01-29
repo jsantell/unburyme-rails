@@ -1,0 +1,49 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Unbury Me Loan Calculator 
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    / Le fav and touch icons
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+
+
+  %body
+
+    / Navigation
+    - if current_user
+      = current_user.name
+      - link_to "Log out", logout_path
+    - else
+      - link_to "Sign in with Twitter", "/auth/twitter"
+
+
+    / Flash
+    -if flash[:notice]
+      .flash.notice 
+        = flash[:notice]
+    -if flash[:error]
+      .flash.error
+        = flash[:error]
+    -if flash[:alert]
+      .flash.alert
+        = flash[:alert]
+
+
+    / Content
+    .container
+      = yield
+
+  %footer
+    %p &copy; Company 2011
+    / /container
