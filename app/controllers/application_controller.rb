@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  layout Proc.new { |controller| controller.request.xhr? ? false : :main }
+  layout Proc.new { |controller| controller.request.xhr? ? false : 'main' }
 
   private
   def current_user
