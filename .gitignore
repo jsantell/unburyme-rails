@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore variable files
-/config/sys_env.rb
+/config/sys_env
