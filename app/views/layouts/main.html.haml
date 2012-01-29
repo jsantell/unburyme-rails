@@ -19,13 +19,13 @@
 
 
   %body
-
+    = ENV['UNBURYME_TWITTER_CONSUMER_KEY']
     / Navigation
     - if current_user
       = current_user.name
-      - link_to "Log out", logout_path
+      = link_to "Log out", logout_path
     - else
-      - link_to "Sign in with Twitter", "/auth/twitter"
+      = link_to "Sign in with Twitter", "/auth/twitter"
 
 
     / Flash
